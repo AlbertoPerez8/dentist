@@ -8,7 +8,13 @@ const blue_bttn = 'bg-blue text-white font-bold py-2 px-4  rounded-full'
 
 export function HamburgerBttn() {
   return (
-    <div className="flex h-14 w-14 flex-col rounded-2xl bg-teal">
+    <button
+        className="m-5 flex flex-row"
+        onClick={() => {
+          clickHandler('/sideMenu')
+        }}
+      >
+        <div className="flex h-14 w-14 flex-col rounded-2xl bg-teal">
       <Image
         className={'items-center justify-center'}
         src={'/test.svg'}
@@ -17,20 +23,14 @@ export function HamburgerBttn() {
         height={64}
       />
     </div>
+      </button>
   )
 }
 
 export default function Home() {
   return (
     <>
-      <button
-        className="m-5 flex flex-row"
-        onClick={() => {
-          clickHandler('/sideMenu')
-        }}
-      >
-        <HamburgerBttn />
-      </button>
+      <HamburgerBttn/>
 
       <div className="flex flex-col items-center justify-center">
         <Image

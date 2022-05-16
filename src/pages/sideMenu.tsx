@@ -9,8 +9,18 @@ export function HomeButton({ name }: { name: string }) {
   return <button className={blue_bttn}>{name}</button>
 }
 
-export const clickHandler = (page:string) => {
-    Router.push(page)
+export const clickHandler = (page: string) => {
+  Router.push(page)
+}
+
+export function ReturnButton() {
+  return (
+    <div className="flex flex-col items-center p-24">
+      <a href="/">
+        <HomeButton name={'Return Home'} />
+      </a>
+    </div>
+  )
 }
 
 export default function Menu() {
@@ -21,7 +31,7 @@ export default function Menu() {
           <button
             className={white_bttn}
             onClick={() => {
-              clickHandler("/")
+              clickHandler('/')
             }}
           >
             Account Settings
@@ -32,7 +42,7 @@ export default function Menu() {
           <button
             className={white_bttn}
             onClick={() => {
-                clickHandler("/")
+              clickHandler('/')
             }}
           >
             Logout
@@ -43,16 +53,11 @@ export default function Menu() {
           <button
             className={white_bttn}
             onClick={() => {
-                clickHandler("/")
+              clickHandler('/about')
             }}
           >
             About Us
           </button>
-        </div>
-        <div className="flex flex-col items-center p-24">
-          <a href="/">
-            <HomeButton name={'Return Home'} />
-          </a>
         </div>
       </div>
     </>
