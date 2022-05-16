@@ -53,7 +53,10 @@ export default function Home() {
           clickHandler('/login')
         }}>Sign In</button>
         <div className="p-6"></div>
-        <button className={white_bttn}>Register</button>
+        <button className={white_bttn} onClick= {() => {
+          clickHandler('register')
+        }}
+        >Register</button>
       </div>
     </>
   )
