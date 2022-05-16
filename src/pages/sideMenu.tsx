@@ -3,7 +3,7 @@ import Router from 'next/router'
 const white_bttn =
   'bg-white text-black text-center  font-bold py-2 px-4 rounded-full border border-black w-64 h-14'
 
-const blue_bttn = 'bg-blue text-white py-2 px-4 w-40 h-12 rounded-xl'
+export const blue_bttn = 'bg-blue text-white py-2 px-4 w-40 h-12 rounded-xl'
 
 export function HomeButton({ name }: { name: string }) {
   return <button className={blue_bttn}>{name}</button>
@@ -15,7 +15,7 @@ export const clickHandler = (page: string) => {
 
 export function ReturnButton() {
   return (
-    <div className="flex flex-col items-center p-24">
+    <div className="flex flex-col items-center">
       <a href="/">
         <HomeButton name={'Return Home'} />
       </a>
@@ -58,6 +58,11 @@ export default function Menu() {
           >
             About Us
           </button>
+        
+        </div>
+        <div className='flex justify-center '>
+        <ReturnButton/>
+
         </div>
       </div>
     </>

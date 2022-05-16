@@ -49,7 +49,9 @@ export default function Home() {
       <div className="container flex flex-col items-center ">
         <button className={white_bttn}>Book an appointment</button>
         <div className="p-6"></div>
-        <button className={white_bttn}>Sign In</button>
+        <button className={white_bttn} onClick={() => {
+          clickHandler('/login')
+        }}>Sign In</button>
         <div className="p-6"></div>
         <button className={white_bttn}>Register</button>
       </div>
