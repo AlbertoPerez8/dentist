@@ -35,7 +35,6 @@ export default function Home() {
   useEffect(() => {
     if (localStorage.getItem('Id') !== null) {
       loggedSet(true)
-      // userSet(JSON.parse(localStorage.getItem('user') || '{}'))
     }
   }, [])
 
@@ -62,6 +61,7 @@ export default function Home() {
           className={white_bttn}
           onClick={() => {
             alert(localStorage.getItem('Id'))
+            console.log(JSON.parse(localStorage.getItem('user') || '{}'))
           }}
         >
           Book an appointment

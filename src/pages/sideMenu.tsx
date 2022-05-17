@@ -31,7 +31,7 @@ export default function Menu() {
           <button
             className={white_bttn}
             onClick={() => {
-              clickHandler('/')
+              clickHandler('/account')
             }}
           >
             Account Settings

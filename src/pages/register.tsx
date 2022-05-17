@@ -19,11 +19,11 @@ export default function Register() {
           <button
             className={tealButton}
             onClick={() => {
-              alert(`first name: ${fname || 'empty'}\nlast name: ${lname|| 'empty'}\nemail: ${email|| 'empty'}\npassword: ${password|| 'empty'}\nphone: ${phone || 'empty'}\nplan: ${plan|| 'empty'}
+              console.log(`first name: ${fname || 'empty'}\nlast name: ${lname|| 'empty'}\nemail: ${email|| 'empty'}\npassword: ${password|| 'empty'}\nphone: ${phone || 'empty'}\nplan: ${plan|| 'empty'}
               `)
             }}
           >
-            Sign In
+            Register
           </button>
       </div>
     )
