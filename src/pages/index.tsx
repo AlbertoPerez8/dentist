@@ -33,8 +33,11 @@ export default function Home() {
   const [logged, loggedSet] = useState(false)
 
   useEffect(() => {
-    if (localStorage.getItem('Id') !== null) loggedSet(true)
-  })
+    if (localStorage.getItem('Id') !== null) {
+      loggedSet(true)
+      // userSet(JSON.parse(localStorage.getItem('user') || '{}'))
+    }
+  }, [])
 
   return (
     <>

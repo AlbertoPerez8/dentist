@@ -1,5 +1,5 @@
-import { redirect } from 'next/dist/server/api-utils'
 import { useState } from 'react'
+import { json } from 'stream/consumers'
 import { blue_bttn, clickHandler, ReturnButton } from './sideMenu'
 
 export default function Login() {
@@ -23,7 +23,10 @@ export default function Login() {
               .then((data) => {
                 user = data.user
                 localStorage.setItem('Id', `${user.id}`)
-                console.log(localStorage.getItem('Id'))
+
+                localStorage.setItem('user', JSON.stringify(user))
+                
+                
               })
             clickHandler('/')
           }}
