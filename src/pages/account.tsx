@@ -38,7 +38,7 @@ export default function Display() {
             <button
               className={blue_bttn}
               onClick={() => {
-                clickHandler('/login')
+                clickHandler('/')
               }}
             >
               Go Home

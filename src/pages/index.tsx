@@ -60,8 +60,7 @@ export default function Home() {
         <button
           className={white_bttn}
           onClick={() => {
-            alert(localStorage.getItem('Id'))
-            console.log(JSON.parse(localStorage.getItem('user') || '{}'))
+            clickHandler('/appointment')
           }}
         >
           Book an appointment
