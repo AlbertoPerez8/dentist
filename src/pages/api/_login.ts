@@ -16,6 +16,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         email: data.email,
       },
     })
+    prisma.$disconnect()
     res.status(200).json({ msg: 'success', user: newUser })
   } catch (error) {
     res.status(403).json({msg: "no user found"})
