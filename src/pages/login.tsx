@@ -1,5 +1,7 @@
 import { useState } from 'react'
-import { blue_bttn, clickHandler, ReturnButton } from './sideMenu'
+import { blue_bttn, ReturnButton } from './sideMenu'
+
+import { prisma } from '@/backend/prisma'
 
 export default function Login() {
   const [email, emailSet] = useState('')
@@ -8,11 +10,14 @@ export default function Login() {
   function signIn() {
     return (
       <div className="flex flex-col items-center">
-        <a href="/">
-          <button className={blue_bttn} onClick={() => {alert(`email: ${email}\npassword: ${password}`)}}>
-            Sign In
-          </button>
-        </a>
+        <button
+          className={blue_bttn}
+          onClick={async () => {
+            alert(`email: ${email}\npassword: ${password}`)
+          }}
+        >
+          Sign In
+        </button>
       </div>
     )
   }

@@ -13,6 +13,8 @@ async function newUser ()  {
      }
   
  })
+
+ prisma.$disconnect()
 }
 
 newUser()

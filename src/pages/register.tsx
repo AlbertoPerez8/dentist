@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { blue_bttn, clickHandler, ReturnButton } from './sideMenu'
+import { ReturnButton } from './sideMenu'
 
 const tealButton =
   'bg-teal text-black font-bold py-2 px-4 w-40 h-12 rounded-xl hover:border-black hover:border'
