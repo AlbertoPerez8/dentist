@@ -16,19 +16,18 @@ export default function Login() {
             let user
             let object = {
               method: 'POST',
-              body: JSON.stringify({ email: emails, password: passwords }),
+              body: JSON.stringify({ email: emails }),
             }
             await fetch('/api/_login', object)
               .then((response) => response.json())
               .then((data) => {
                 user = data.user
-                localStorage.setItem('Id', `${user.id}`)
-
-                localStorage.setItem('user', JSON.stringify(user))
-                
-                
+                if (user !== null && user.password === passwords) {
+                  localStorage.setItem('Id', `${user.id}`)
+                  localStorage.setItem('user', JSON.stringify(user))
+                  clickHandler('/')
+                }
               })
-            clickHandler('/')
           }}
         >
           Sign In

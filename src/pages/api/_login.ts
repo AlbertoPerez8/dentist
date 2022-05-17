@@ -14,11 +14,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const newUser = await prisma.user.findFirst({
       where: {
         email: data.email,
-        password: data.password,
       },
     })
     res.status(200).json({ msg: 'success', user: newUser })
   } catch (error) {
+    res.status(403).json({msg: "no user found"})
     console.log(error)
   }
 }
