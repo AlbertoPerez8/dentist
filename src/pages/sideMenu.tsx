@@ -42,6 +42,7 @@ export default function Menu() {
           <button
             className={white_bttn}
             onClick={() => {
+              localStorage.clear()
               clickHandler('/')
             }}
           >

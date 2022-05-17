@@ -1,11 +1,10 @@
+import { redirect } from 'next/dist/server/api-utils'
 import { useState } from 'react'
-import { blue_bttn, ReturnButton } from './sideMenu'
-
-import { prisma } from '@/backend/prisma'
+import { blue_bttn, clickHandler, ReturnButton } from './sideMenu'
 
 export default function Login() {
-  const [email, emailSet] = useState('')
-  const [password, passwordSet] = useState('')
+  const [emails, emailSet] = useState('')
+  const [passwords, passwordSet] = useState('')
 
   function signIn() {
     return (
@@ -13,7 +12,20 @@ export default function Login() {
         <button
           className={blue_bttn}
           onClick={async () => {
-            alert(`email: ${email}\npassword: ${password}`)
+            // alert(`email: ${emails}\npassword: ${passwords}`)
+            let user
+            let object = {
+              method: 'POST',
+              body: JSON.stringify({ email: emails, password: passwords }),
+            }
+            await fetch('/api/_login', object)
+              .then((response) => response.json())
+              .then((data) => {
+                user = data.user
+                localStorage.setItem('Id', `${user.id}`)
+                console.log(localStorage.getItem('Id'))
+              })
+            clickHandler('/')
           }}
         >
           Sign In
